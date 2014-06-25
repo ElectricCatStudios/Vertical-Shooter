@@ -24,5 +24,5 @@ function love.draw()
 end
 
 function love.keypressed(key,isrepeat)
-	state:keypressed()
+	state:keypressed(key)
 end
