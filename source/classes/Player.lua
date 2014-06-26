@@ -5,6 +5,7 @@ function Player:init()
 	self.SPEED = 150
 	self.position = Vector(love.window.getWidth()/2, love.window.getHeight()/2)
 	self.sprite = spr_playerShip1
+	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
 end
 
 
@@ -26,7 +27,9 @@ function Player:update(dt)
 
 	v:normalize_inplace()
 
-	self.position = self.position + (v*dt*self.SPEED)
+	local dp = v*dt*self.SPEED
+	self.position = self.position + dp
+	self.hitbox:translate(dp)
 end
 
 
