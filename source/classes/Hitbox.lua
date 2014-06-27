@@ -9,7 +9,6 @@ function Hitbox:init(position, dimensions)
 	self.dimensions = dimensions
 end
 
-
 function Hitbox:collision(hitbox)
 	return (self.a.x < hitbox.b.x and self.a.y < hitbox.b.y and self.b.x> hitbox.a.x and self.b.y > hitbox.a.y)		
 end
@@ -20,17 +19,14 @@ function Hitbox:setPos(position)
 	self.b = position + (self.dimensions/2)
 end
 
-
 function Hitbox:translate(dp)
 	self.a = self.a + dp
 	self.b = self.b + dp
 end
 
-
 function Hitbox:status()
 	print("Hitbox status:\na: " .. tostring(self.a) .. "\nb: " .. tostring(self.b))
 end
-
 
 function Hitbox:draw()
 	love.graphics.setColor(255,255,255)

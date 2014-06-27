@@ -5,6 +5,7 @@ Vector = require "./source/lib/vector"		-- vector
 -- classes
 require "./source/classes/StateManager"		-- StateManager
 require "./source/classes/Player"			-- Player
+require "./source/classes/Enemy"			-- Enemy
 require "./source/classes/Hitbox"			-- Hitbox
 
 state = StateManager:new()					-- init state system
@@ -14,6 +15,8 @@ require "./source/states/gameState"			-- game
 
 -- images
 spr_playerShip1 = love.graphics.newImage("/source/resources/playerShip1.jpg")		-- playerShip1
+spr_enemyShip1 = love.graphics.newImage("/source/resources/enemyShip1.jpg")		-- enemyShip1
+
 
 function love.load()
 	state:set("game")

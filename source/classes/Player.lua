@@ -1,13 +1,11 @@
 Player = class:new()
 
-
 function Player:init()
 	self.SPEED = 150
 	self.position = Vector(love.window.getWidth()/2, love.window.getHeight()/2)
 	self.sprite = spr_playerShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
 end
-
 
 function Player:update(dt)
 	-- movement
@@ -32,9 +30,9 @@ function Player:update(dt)
 	self.hitbox:translate(dp)
 end
 
-
 function Player:draw()
 	love.graphics.draw(self.sprite, self.position.x, self.position.y, 0, 1, 1, self.sprite:getWidth()/2, self.sprite:getHeight()/2)
+	self.hitbox:draw()
 end
 
 function Player:status()

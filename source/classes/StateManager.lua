@@ -6,7 +6,6 @@ function StateManager:init()
 	self.paused = false
 end
 
-
 function StateManager:pause()
 	self.paused = true
 end
@@ -15,7 +14,6 @@ end
 function StateManager:unpause()
 	self.paused = false
 end
-
 
 function StateManager:pauseToggle()
 	self.paused = (not self.paused)
@@ -42,13 +40,11 @@ function StateManager:set(index)
 	end
 end
 
-
 function StateManager:update(dt)
 	if self.current.update and not self.paused then
 		self.current:update(dt)
 	end
 end
-
 
 function StateManager:draw()
 	if self.current.draw then
@@ -56,13 +52,11 @@ function StateManager:draw()
 	end
 end
 
-
 function StateManager:keypressed(key)
 	if self.current.keypressed then
 		self.current:keypressed(key)
 	end
 end
-
 
 function StateManager:printStates()
 	print("states are:")
