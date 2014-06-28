@@ -3,8 +3,14 @@ local gameState = {}
 function gameState:init()
 	self.timer = 0
 
+	testPath = Path:new()
+	testPath:addFrame('start', 16, 16)
+	testPath:addFrame('linear',10,10)
+	testPath:addFrame('linear',100,100)
+	testPath:printFrames()
+
 	testPlayer = Player:new()
-	testEnemy = Enemy:new()
+	testEnemy = Enemy:new(testPath)
 end
 
 function gameState:update(dt)
