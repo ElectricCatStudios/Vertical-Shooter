@@ -2,8 +2,6 @@ Hitbox = class:new()
 
 
 function Hitbox:init(position, dimensions)
-	print(position)
-	print(dimensions)
 	self.a = position - (dimensions/2)
 	self.b = position + (dimensions/2)
 	self.dimensions = dimensions
