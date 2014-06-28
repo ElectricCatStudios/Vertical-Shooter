@@ -22,9 +22,9 @@ spr_enemyShip1 = love.graphics.newImage("/source/resources/enemyShip1.jpg")		-- 
 function love.load()
 	state:set("game")
 	testPath = Path:new()
-	testPath:addFrame(0, 0)
-	testPath:addFrame(10,10)
-	testPath:addFrame(100,100)
+	testPath:addFrame('linear', 0, 0)
+	testPath:addFrame('linear',10,10)
+	testPath:addFrame('linear',100,100)
 	testPath:printFrames()
 end
 
