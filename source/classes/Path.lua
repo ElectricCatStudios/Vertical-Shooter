@@ -16,6 +16,7 @@ function Path:addFrame(type, a, b)
 	elseif (type == 'start') then
 		frame.position = a
 		self.position = a
+		frame.time = 0
 	end
 
 	table.insert(self.data, frame)
@@ -35,11 +36,15 @@ function Path:update(dt)
 		if (self.time >= current.time) then
 			self.current = self.current + 1
 			current = self:getCurrent()
-			self.time = 0
+			current = self:getCurrent()
+			previous = self.data[self.current-1]
 		end
 
 		if (current.type == 'linear') then
-			self.position = previous.position + (self.time/current.time)*(current.position - previous.position)
+			local keyTime = self.time - previous.time				-- How for into the current keyFrame
+			local keyLength = current.time - previous.time			-- How long the current keyFrame is
+			local dp = (keyTime/keyLength) * (current.position - previous.position)
+			self.position = previous.position + dp
 		end
 	end
 end
