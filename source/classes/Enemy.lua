@@ -16,6 +16,7 @@ end
 function Enemy:update(dt)
 	self.path:update(dt)
 	self.position = self.path.position
+	self.hitbox:setPos(self.position)
 end
 
 function Enemy:status()
