@@ -11,8 +11,8 @@ function Path:addFrame(type, a, b)
 	local frame = {['type'] = type}
 
 	if (type == 'linear') then
-		frame.position = a
-		frame.time = b
+		frame.position = b
+		frame.time = a
 	elseif (type == 'start') then
 		frame.position = a
 		self.position = a
