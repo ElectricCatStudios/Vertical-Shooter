@@ -17,8 +17,8 @@ function Path:addFrame(type, a, b, c)
 	elseif (type == 'end') then
 		frame.time = math.huge
 	elseif (type == 'linear') then
-		frame.pf = a
-		frame.time = b
+		frame.pf = b
+		frame.time = a
 	elseif (type == 'bezier2') then		-- 2nd order bezier curve
 		frame.time = a
 		frame.p0 = self.data[table.getn(self.data)].pf
