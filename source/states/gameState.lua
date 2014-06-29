@@ -4,12 +4,11 @@ function gameState:init()
 	self.timer = 0
 
 	testPath = Path:new()
-	testPath:addFrame('start', Vector(16, 16))
-	testPath:addFrame('linear', Vector(32*1,32*1), 1)
-	testPath:addFrame('linear', Vector(32*1,32*10), 4)
-	testPath:addFrame('linear', Vector(32*3,32*6), 6)
-	testPath:addFrame('linear', Vector(32*16,32*3), 9)
+	testPath:addFrame('start', Vector(32, 32))
+	testPath:addFrame('bezier2', 2, Vector(32*2,32*2), Vector(32*3,32*1), 1)
+	testPath:addFrame('bezier2', 4, Vector(32*3,32*2), Vector(32*2,32*2), 4)
 	testPath:addFrame('end')
+	testPath:printFrames()
 
 	testPlayer = Player:new()
 	testEnemy = Enemy:new(testPath)

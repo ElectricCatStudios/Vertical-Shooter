@@ -2,7 +2,7 @@ Enemy = class:new()
 
 function Enemy:init(path)
 	self.path = path
-	self.position = path:getCurrent().position
+	self.position = path:getCurrent().pf
 	self.path.current = self.path.current + 1
 	self.sprite = spr_enemyShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
