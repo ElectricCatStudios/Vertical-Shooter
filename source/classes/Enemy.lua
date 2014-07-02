@@ -11,6 +11,7 @@ end
 function Enemy:draw()
 	love.graphics.draw(self.sprite, self.position.x, self.position.y, 0, 1, 1, self.sprite:getWidth()/2, self.sprite:getHeight()/2)
 	self.hitbox:draw()
+	self.path:draw()
 end
 
 function Enemy:update(dt)

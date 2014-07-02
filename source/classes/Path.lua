@@ -7,7 +7,7 @@ function Path:init(data)
 	self.position = Vector()
 end
 
-function Path:addFrame(type, a, b, c)
+function Path:addFrame(type, a, b, c, d)
 	local frame = {['type'] = type}
 
 	if (type == 'start') then
@@ -17,6 +17,7 @@ function Path:addFrame(type, a, b, c)
 	elseif (type == 'end') then
 		frame.time = math.huge
 	elseif (type == 'linear') then
+		frame.p0 = self.data[table.getn(self.data)].pf
 		frame.pf = b
 		frame.time = a
 	elseif (type == 'bezier2') then		-- 2nd order bezier curve
@@ -24,6 +25,12 @@ function Path:addFrame(type, a, b, c)
 		frame.p0 = self.data[table.getn(self.data)].pf
 		frame.p1 = b
 		frame.pf = c
+	elseif (type == 'bezier3') then		-- 3rd order bezier curve
+		frame.time = a
+		frame.p0 = self.data[table.getn(self.data)].pf
+		frame.p1 = b
+		frame.p2 = c
+		frame.pf = d
 	end
 
 	table.insert(self.data, frame)
@@ -55,8 +62,37 @@ function Path:update(dt)
 			local dp = (keyTime/keyLength) * (current.pf - previous.pf)
 			self.position = previous.pf + dp
 		elseif (current.type == 'bezier2') then
-			self.position = (1-t)^2*previous.pf + 2*(1-t)*t*current.p1 + t^2*current.pf
+			self.position = (1-t)^2*current.p0 + 2*(1-t)*t*current.p1 + t^2*current.pf
+		elseif (current.type == 'bezier3') then
+			self.position = (1-t)^3*current.p0 + 3*(1-t)^2*t*current.p1 + 3*(1-t)*t^2*current.p2 + t^3*current.pf
 		end
+	end
+end
+
+function Path:draw()
+	local current = self:getCurrent()
+
+	if (current.type == 'bezier3') then
+		love.graphics.circle("fill", current.p0.x, current.p0.y, 3)
+		love.graphics.print("0", current.p0.x, current.p0.y )
+		love.graphics.circle("fill", current.p1.x, current.p1.y, 3)
+		love.graphics.print("1", current.p1.x, current.p1.y )
+		love.graphics.circle("fill", current.p2.x, current.p2.y, 3)
+		love.graphics.print("2", current.p2.x, current.p2.y )
+		love.graphics.circle("fill", current.pf.x, current.pf.y, 3)
+		love.graphics.print("3", current.pf.x, current.pf.y )
+	elseif(current.type == 'bezier2') then
+		love.graphics.circle("fill", current.p0.x, current.p0.y, 3)
+		love.graphics.print("0", current.p0.x, current.p0.y )
+		love.graphics.circle("fill", current.p1.x, current.p1.y, 3)
+		love.graphics.print("1", current.p1.x, current.p1.y )
+		love.graphics.circle("fill", current.pf.x, current.pf.y, 3)
+		love.graphics.print("2", current.pf.x, current.pf.y )
+	elseif(current.type == 'linear') then
+		love.graphics.circle("fill", current.p0.x, current.p0.y, 3)
+		love.graphics.print("0", current.p0.x, current.p0.y )
+		love.graphics.circle("fill", current.pf.x, current.pf.y, 3)
+		love.graphics.print("1", current.pf.x, current.pf.y )
 	end
 end
 

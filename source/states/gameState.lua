@@ -5,9 +5,9 @@ function gameState:init()
 
 	testPath = Path:new()
 	testPath:addFrame('start', Vector(32, 32))
-	testPath:addFrame('bezier2', 2, Vector(32*2,32*2), Vector(32*3,32*1))
-	testPath:addFrame('linear', 4,  Vector(32*2,32*2)*2)
-	testPath:addFrame('bezier2', 6, Vector(32*3,32*2), Vector(32*2,32*2))
+	testPath:addFrame('bezier3', 2, Vector(32*1.5,32*4), Vector(32*3.5,32*4), Vector(32*4,32*1))
+	testPath:addFrame('linear', 3.5,  Vector(32*4,32*4))
+	testPath:addFrame('bezier2', 5.5,  Vector(32*1,32*4),  Vector(32*1,32*8))
 	testPath:addFrame('end')
 	testPath:printFrames()
 
