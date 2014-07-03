@@ -20,7 +20,7 @@ spr_enemyShip1 = love.graphics.newImage("/resources/enemyShip1.jpg")		-- enemySh
 
 
 function love.load()
-	state:set("game")
+	state:set("game","./lvl/testLevel.lvl")
 end
 
 function love.update(dt)
