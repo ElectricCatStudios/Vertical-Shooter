@@ -28,12 +28,12 @@ function StateManager:add(index, state)
 	end
 end
 
-function StateManager:set(index)
+function StateManager:set(index, ...)
 	if (self.list[index]) then
 		self.current = self.list[index]
 		
 		if (self.current.init) then
-			self.current:init()
+			self.current:init(...)
 		end
 	else
 		error("The state " .. index .. " does not exist",2)
