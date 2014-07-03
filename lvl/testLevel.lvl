@@ -1,4 +1,4 @@
-Fighter1, 4, 3
+Fighter1, 4, 2
 	start, 1
 		0, 0
 	bezier2, 2, 2
@@ -9,7 +9,7 @@ Fighter1, 4, 3
 		640,0
 		320,0
 	end, 0
-Fighter1, 4, 3
+Fighter2, 4, 6
 	start, 1
 		0, 0
 	bezier2, 2, 2

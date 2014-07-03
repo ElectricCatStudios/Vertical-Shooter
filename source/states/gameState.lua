@@ -3,6 +3,8 @@ local gameState = {}
 function gameState:init(lvl)
 	self.timer = 0
 	self.enemyList = {}
+	self.spawnList = {}
+	self.spawnIndex = 1
 	self.lvldata = io.open(lvl, 'r')
 	
 	self:readMap()
@@ -12,6 +14,11 @@ function gameState:update(dt)
 	self.timer = self.timer + dt
 	for i, v in pairs(self.enemyList) do
 		v:update(dt)
+	end
+	
+	if (self.spawnList[self.spawnIndex] and self.timer >= self.spawnList[self.spawnIndex].time) then
+		table.insert(self.enemyList, Enemy:new(self.spawnList[self.spawnIndex].path))
+		self.spawnIndex = self.spawnIndex + 1
 	end
 end
 
@@ -32,6 +39,7 @@ function gameState:readMap()
 	io.input(self.lvldata)
 	
 	local nextEnemy = io.read()
+	-- loop through each enemy
 	repeat
 
 		local enemyType, pathSegments, spawnTime = 
@@ -44,7 +52,7 @@ function gameState:readMap()
 			input = io.read()
 			local segmentType, parmNo, segTime = 
 				string.match(input, "%s*(%w+)%s*,%s*(%w+)%s*,*%s*(%w*)")				-- read the segment type, the number of parameters it takes and the time
-			local parmList = {}															-- the list of parms that this segment requiers
+			local parmList = {}															-- the list of parms that this segment requires
 			
 			-- loop through all segment parameters
 			for j=1, parmNo do
@@ -61,10 +69,9 @@ function gameState:readMap()
 			end
 		end
 		
-		newPath:printFrames()
-		table.insert(self.enemyList, Enemy:new(newPath))
+		table.insert(self.spawnList, {['time'] = tonumber(spawnTime), ['path'] = newPath, ['type'] = enemyType})
 		
-		local nextEnemy = io.read()
+		nextEnemy = io.read()
 	until(not nextEnemy)
 end
 
