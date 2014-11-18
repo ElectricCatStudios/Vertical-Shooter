@@ -1,5 +1,6 @@
 -- dependencies
 require "./source/lib/class"				-- class
+require "./source/lib/util"					-- util
 Vector = require "./source/lib/vector"		-- vector
 
 -- classes

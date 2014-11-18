@@ -9,8 +9,10 @@ function gameState:init(lvl)
 	self.background = spr_testBackground
 	self.player = Player:new()
 	self.player.position = Vector(self.background:getWidth()/2, -32)
-	self.translationVec = Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
+	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
 	self.levelSpeed = 50
+	self.player.constSpeed = Vector.UP*(self.levelSpeed)
+	self.borderWidth = 200
 	table.insert(self.enemyList, self.player)
 	print(self.player.position)
 	
@@ -18,7 +20,18 @@ function gameState:init(lvl)
 end
 
 function gameState:update(dt)
-	self.translationVec = self.translationVec + Vector.DOWN*self.levelSpeed*dt
+	self.camPos = self.camPos - Vector.DOWN*self.levelSpeed*dt
+	-- keep the camera in view
+	local leftDis = self.player.position.x - self.camPos.x
+	local rightDis = self.camPos.x + love.window.getWidth() - self.player.position.x
+	if (leftDis < self.borderWidth) then
+		self.camPos.x = self.player.position.x - self.borderWidth
+	elseif (rightDis < self.borderWidth) then
+		self.camPos.x = self.player.position.x + self.borderWidth - love.window.getWidth()
+	end
+
+	self.camPos.x = math.clamp(self.camPos.x, 0, self.background:getWidth() - love.window.getWidth())
+
 
 	self.timer = self.timer + dt
 	for i, v in pairs(self.enemyList) do
@@ -32,7 +45,7 @@ function gameState:update(dt)
 end
 
 function gameState:draw()
-	love.graphics.translate(self.translationVec.x, self.translationVec.y)
+	love.graphics.translate(-self.camPos.x, -self.camPos.y)
 	love.graphics.draw(self.background, 0, -self.background:getHeight())
 	love.graphics.print(self.timer, 16, 16)
 	for i, v in pairs(self.enemyList) do

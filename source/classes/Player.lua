@@ -1,10 +1,11 @@
 Player = class:new()
 
 function Player:init()
-	self.SPEED = 150
+	self.speed = Vector(250, 200)
 	self.position = Vector(0, 0)
 	self.sprite = spr_playerShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
+	self.constSpeed = Vector(0, 0)
 end
 
 function Player:update(dt)
@@ -25,7 +26,9 @@ function Player:update(dt)
 
 	v:normalize_inplace()
 
-	local dp = v*dt*self.SPEED
+	v.x = v.x*self.speed.x
+	v.y = v.y*self.speed.y
+	local dp = (self.constSpeed + v)*dt
 	self.position = self.position + dp
 	self.hitbox:translate(dp)
 end
