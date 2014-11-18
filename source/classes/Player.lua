@@ -2,7 +2,7 @@ Player = class:new()
 
 function Player:init()
 	self.SPEED = 150
-	self.position = Vector(love.window.getWidth()/2, love.window.getHeight()/2)
+	self.position = Vector(0, 0)
 	self.sprite = spr_playerShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
 end

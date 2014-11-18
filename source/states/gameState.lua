@@ -6,11 +6,20 @@ function gameState:init(lvl)
 	self.spawnList = {}
 	self.spawnIndex = 1
 	self.lvldata = io.open(lvl, 'r')
+	self.background = spr_testBackground
+	self.player = Player:new()
+	self.player.position = Vector(self.background:getWidth()/2, -32)
+	self.translationVec = Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
+	self.levelSpeed = 50
+	table.insert(self.enemyList, self.player)
+	print(self.player.position)
 	
 	self:readMap()
 end
 
 function gameState:update(dt)
+	self.translationVec = self.translationVec + Vector.DOWN*self.levelSpeed*dt
+
 	self.timer = self.timer + dt
 	for i, v in pairs(self.enemyList) do
 		v:update(dt)
@@ -23,6 +32,8 @@ function gameState:update(dt)
 end
 
 function gameState:draw()
+	love.graphics.translate(self.translationVec.x, self.translationVec.y)
+	love.graphics.draw(self.background, 0, -self.background:getHeight())
 	love.graphics.print(self.timer, 16, 16)
 	for i, v in pairs(self.enemyList) do
 		v:draw()
