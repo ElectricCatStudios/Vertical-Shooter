@@ -38,6 +38,11 @@ function Player:draw()
 	self.hitbox:draw()
 end
 
+function Player:setPos(position)
+	self.position = position
+	self.hitbox:setPos(position)
+end
+
 function Player:status()
 	print("status for Player:\n" .. tostring(self.position))
 end

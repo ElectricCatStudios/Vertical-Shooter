@@ -8,7 +8,7 @@ function gameState:init(lvl)
 	self.lvldata = io.open(lvl, 'r')
 	self.background = spr_testBackground
 	self.player = Player:new()
-	self.player.position = Vector(self.background:getWidth()/2, -32)
+	self.player:setPos(Vector(self.background:getWidth()/2, -32))
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
 	self.levelSpeed = 50
 	self.player.constSpeed = Vector.UP*(self.levelSpeed)
