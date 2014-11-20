@@ -32,8 +32,7 @@ function Player:update(dt)
 	local dp = (self.constSpeed + v)*dt
 	self.position = self.position + dp
 	self.hitbox:translate(dp)
-
-	table.insert(self.bulletList, StandardBullet:new(self.position, nil, Vector(4,4)))
+	self.weapon:update(dt)
 end
 
 function Player:draw()

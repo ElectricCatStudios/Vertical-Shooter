@@ -9,12 +9,13 @@ Vector.LEFT = Vector(-1, 0)
 Vector.RIGHT = Vector(1, 0)
 
 -- classes
-require "./source/classes/StandardBullet"	-- Standard Bullet
-require "./source/classes/StateManager"		-- StateManager
-require "./source/classes/Player"			-- Player
-require "./source/classes/Enemy"			-- Enemy
-require "./source/classes/Hitbox"			-- Hitbox
-require "./source/classes/Path"				-- Path
+require "./source/classes/Projectiles/Bullet"			-- Standard Bullet
+require "./source/classes/Weapons/Sprayer"				-- Sprayer Weapon
+require "./source/classes/StateManager"					-- StateManager
+require "./source/classes/Player"						-- Player
+require "./source/classes/Enemy"						-- Enemy
+require "./source/classes/Hitbox"						-- Hitbox
+require "./source/classes/Path"							-- Path
 
 state = StateManager:new()					-- init state system
 
