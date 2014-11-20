@@ -4,10 +4,11 @@ function gameState:init(lvl)
 	self.timer = 0
 	self.enemyList = {}
 	self.spawnList = {}
+	self.bulletList = {}
 	self.spawnIndex = 1
 	self.lvldata = io.open(lvl, 'r')
 	self.background = spr_testBackground
-	self.player = Player:new()
+	self.player = Player:new(self.bulletList)
 	self.player:setPos(Vector(self.background:getWidth()/2, -32))
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
 	self.levelSpeed = 50
@@ -37,6 +38,9 @@ function gameState:update(dt)
 	for i, v in pairs(self.enemyList) do
 		v:update(dt)
 	end
+	for i, v in pairs(self.bulletList) do
+		v:update(dt)
+	end
 	
 	if (self.spawnList[self.spawnIndex] and self.timer >= self.spawnList[self.spawnIndex].time) then
 		table.insert(self.enemyList, Enemy:new(self.spawnList[self.spawnIndex].path))
@@ -49,6 +53,9 @@ function gameState:draw()
 	love.graphics.draw(self.background, 0, -self.background:getHeight())
 	love.graphics.print(self.timer, 16, 16)
 	for i, v in pairs(self.enemyList) do
+		v:draw()
+	end
+	for i, v in pairs(self.bulletList) do
 		v:draw()
 	end
 end

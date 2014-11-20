@@ -1,11 +1,12 @@
 Player = class:new()
 
-function Player:init()
+function Player:init(bulletList)
 	self.speed = Vector(250, 200)
 	self.position = Vector(0, 0)
 	self.sprite = spr_playerShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
 	self.constSpeed = Vector(0, 0)
+	self.bulletList = bulletList
 end
 
 function Player:update(dt)
@@ -31,6 +32,8 @@ function Player:update(dt)
 	local dp = (self.constSpeed + v)*dt
 	self.position = self.position + dp
 	self.hitbox:translate(dp)
+
+	table.insert(self.bulletList, StandardBullet:new(self.position, nil, Vector(4,4)))
 end
 
 function Player:draw()
