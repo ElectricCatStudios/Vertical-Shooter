@@ -4,14 +4,15 @@ function gameState:init(lvl)
 	self.timer = 0
 	self.enemyList = {}
 	self.spawnList = {}
-	self.bulletList = {}
+	self.projectileList = {}
 	self.spawnIndex = 1
 	self.lvldata = io.open(lvl, 'r')
 	self.background = spr_testBackground
-	self.player = Player:new(self.bulletList)
+	self.player = Player:new(self.projectileList)
 	self.player:setPos(Vector(self.background:getWidth()/2, -32))
 	self.player.weapon = Sprayer:new(self.player)
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight())
+	self.projectileCount = 0
 	self.levelSpeed = 50
 	self.player.constSpeed = Vector.UP*(self.levelSpeed)
 	self.borderWidth = 200
@@ -39,7 +40,7 @@ function gameState:update(dt)
 	for i, v in pairs(self.enemyList) do
 		v:update(dt)
 	end
-	for i, v in pairs(self.bulletList) do
+	for i, v in pairs(self.projectileList) do
 		v:update(dt)
 	end
 	
@@ -56,7 +57,7 @@ function gameState:draw()
 	for i, v in pairs(self.enemyList) do
 		v:draw()
 	end
-	for i, v in pairs(self.bulletList) do
+	for i, v in pairs(self.projectileList) do
 		v:draw()
 	end
 end
@@ -105,6 +106,14 @@ function gameState:readMap()
 		
 		nextEnemy = io.read()
 	until(not nextEnemy)
+end
+
+function gameState:addProjectile(projectile)
+	local projectileCount = self.projectileCount
+
+	self.projectileList[projectileCount] = projectile
+	self.projectileCount = self.projectileCount + 1
+	return projectileCount
 end
 
 state:add("game", gameState)

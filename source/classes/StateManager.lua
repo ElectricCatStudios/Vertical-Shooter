@@ -31,6 +31,7 @@ end
 function StateManager:set(index, ...)
 	if (self.list[index]) then
 		self.current = self.list[index]
+		global_currentState = self.current
 		
 		if (self.current.init) then
 			self.current:init(...)

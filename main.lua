@@ -18,6 +18,7 @@ require "./source/classes/Hitbox"						-- Hitbox
 require "./source/classes/Path"							-- Path
 
 state = StateManager:new()					-- init state system
+global_currentState = nil
 
 -- states
 require "./source/states/gameState"			-- game
