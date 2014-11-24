@@ -2,6 +2,7 @@ local gameState = {}
 
 function gameState:init(lvl)
 	self.timer = 0
+	self.debugString = ""
 	self.enemyList = {}
 	self.spawnList = {}
 	self.projectileList = {}
@@ -60,6 +61,8 @@ function gameState:draw()
 	for i, v in pairs(self.projectileList) do
 		v:draw()
 	end
+	love.graphics.origin()
+	love.graphics.print(self.debugString, 16, 16)
 end
 
 function gameState:keypressed(key)
@@ -114,6 +117,10 @@ function gameState:addProjectile(projectile)
 	self.projectileList[projectileCount] = projectile
 	self.projectileCount = self.projectileCount + 1
 	return projectileCount
+end
+
+function gameState:removeProjectile(id)
+	self.projectileList[id] = nil
 end
 
 state:add("game", gameState)
