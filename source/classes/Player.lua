@@ -25,7 +25,7 @@ function Player:update(dt)
 		v = v + Vector(1,0)
 	end
 
-	v:normalize_inplace()
+	-- v:normalize_inplace()
 
 	v.x = v.x*self.speed.x
 	v.y = v.y*self.speed.y
