@@ -50,6 +50,7 @@ function gameState:update(dt)
 	
 	-- spawn enemies in spawnList
 	if (self.spawnList[self.spawnIndex] and self.timer >= self.spawnList[self.spawnIndex].time) then
+		print("enemy spawned")
 		table.insert(self.shipList, Enemy:new(self.spawnList[self.spawnIndex].path))
 		self.spawnIndex = self.spawnIndex + 1
 	end
