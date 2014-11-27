@@ -11,7 +11,7 @@ function gameState:init(lvl)
 	self.background = spr_testBackground 	-- the sprite that will be used for the background
 	self.camPos = nil			-- the position of the camera in global coordinates
 	self.projectileCount = 0 	-- the number of projetiles that have been created, serves as an index
-	self.levelSpeed = 50		-- the rate at which the level scrolls  TODO: make this part of the level data
+	self.levelSpeed = -0		-- the rate at which the level scrolls  TODO: make this part of the level data
 	self.borderWidth = 200		-- how close to the side of the level the player must be for it to scroll
 	
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight()) -- set camera pos so that center of map is in center of screen
@@ -110,7 +110,7 @@ function gameState:readMap()
 			-- loop through all segment parameters
 			for j=1, parmNo do
 				input = io.read()
-				local coord = Vector(string.match(input, "%s*(%w+)%s*,%s*(%w*)"))		-- read coordinates of the parameter
+				local coord = Vector(string.match(input, "%s*(%-?%w+)%s*,%s*(%-?%w*)"))		-- read coordinates of the parameter
 				table.insert(parmList, coord)
 			end
 			
