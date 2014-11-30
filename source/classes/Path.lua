@@ -31,6 +31,10 @@ function Path:addFrame(type, a, b, c, d)
 		frame.p1 = b
 		frame.p2 = c
 		frame.pf = d
+	elseif (type == 'wait') then		-- wait for period of time
+		frame.time = a
+		frame.p0 = self.data[table.getn(self.data)].pf
+		frame.pf = frame.p0
 	end
 
 	table.insert(self.data, frame)

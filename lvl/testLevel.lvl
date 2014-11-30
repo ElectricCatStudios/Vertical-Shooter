@@ -1,9 +1,10 @@
-Fighter1, 4, 2
+Fighter1, 5, 2
 	start, 1
 		0, -100
 	bezier2, 2, 2
 		0,-420
 		320,-420
+	wait, 0, 3
 	bezier3, 3, 4
 		640, -420
 		640,-100
