@@ -1,13 +1,12 @@
-Bullet = newclass("Bullet")
-function Bullet:init(position, sprite, dimensions, direction, speed)
-	self.position = position
-	self.sprite = sprite
+Bullet = newclass("Bullet", GameObject)
+function Bullet:init(id, parent, position, sprite, dimensions, direction, speed)
+	self.super:init(id, parent, position, love.graphics.newCanvas(dimensions.x, dimensions.y))
+
 	self.dimensions = dimensions
 	self.direction = direction or Vector.UP
 	self.speed = speed or 600
 	self.vel = self.direction*self.speed
 	self.hitbox = Hitbox:new(position, dimensions)
-	self.id = nil
 end
 
 function Bullet:update(dt)

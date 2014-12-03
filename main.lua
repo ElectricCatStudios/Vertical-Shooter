@@ -1,3 +1,5 @@
+-- TODO: make a new GameObject system in gameState.lua
+
 -- dependencies
 require "./source/lib/yaci"					-- class implementation
 require "./source/lib/util"					-- util
@@ -9,6 +11,7 @@ Vector.LEFT = Vector(-1, 0)
 Vector.RIGHT = Vector(1, 0)
 
 -- classes
+require "./source/classes/GameObject"					-- GameObject parent class
 require "./source/classes/Projectiles/Bullet"			-- Standard Bullet
 require "./source/classes/Weapons/Sprayer"				-- Sprayer Weapon
 require "./source/classes/StateManager"					-- StateManager

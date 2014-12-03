@@ -1,16 +1,16 @@
-Enemy = newclass("Enemy")
+Enemy = newclass("Enemy", GameObject)
 
-function Enemy:init(path)
+function Enemy:init(id, parent, position, path)
+	position = path.position
+
+	self.super:init(id, parent, position, spr_enemyShip1)
+	
 	self.path = path
-	self.position = path:getCurrent().pf
-	self.path.current = self.path.current + 1
-	self.sprite = spr_enemyShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
-	self.id = nil
 end
 
 function Enemy:draw()
-	love.graphics.draw(self.sprite, self.position.x, self.position.y, 0, 1, 1, self.sprite:getWidth()/2, self.sprite:getHeight()/2)
+	self.super:draw()
 	self.hitbox:draw()
 	self.path:draw()
 end

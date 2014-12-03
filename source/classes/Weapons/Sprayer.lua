@@ -10,7 +10,7 @@ end
 function Sprayer:update(dt)
 	self.shootTimer = self.shootTimer + dt
 	if (self.shootTimer > self.rof) then
-		local projectile = Bullet:new(self.parent.position, nil, Vector(4,4))
+		local projectile = Bullet:new(nil, nil, self.parent.position, nil, Vector(4,4))
 		projectile.id = global_currentState:addProjectile(projectile)
 		self.shootTimer = self.shootTimer - self.rof
 	end

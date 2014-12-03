@@ -1,12 +1,13 @@
-Player = newclass("Player")
+Player = newclass("Player", GameObject)
 
-function Player:init(bulletList)
-	self.speed = Vector(250, 200)
-	self.position = Vector(0, 0)
-	self.sprite = spr_playerShip1
+function Player:init(id, parent, position)
+	-- statics
+	Player.speed = Vector(250, 200)
+
+	self.super:init(id, parent, position, spr_playerShip1)
+
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
 	self.constSpeed = Vector(0, 0)
-	self.bulletList = bulletList
 end
 
 function Player:update(dt)
@@ -36,7 +37,7 @@ function Player:update(dt)
 end
 
 function Player:draw()
-	love.graphics.draw(self.sprite, self.position.x, self.position.y, 0, 1, 1, self.sprite:getWidth()/2, self.sprite:getHeight()/2)
+	self.super:draw()
 	self.hitbox:draw()
 end
 

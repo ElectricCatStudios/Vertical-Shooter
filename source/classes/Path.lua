@@ -14,6 +14,7 @@ function Path:addFrame(type, a, b, c, d)
 		frame.pf = a
 		self.position = a
 		frame.time = 0
+		self.current = self.current + 1
 	elseif (type == 'end') then
 		frame.time = math.huge
 	elseif (type == 'linear') then
