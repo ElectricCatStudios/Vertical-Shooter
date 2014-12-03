@@ -1,4 +1,4 @@
-Hitbox = class:new()
+Hitbox = newclass("Hitbox")
 
 
 function Hitbox:init(position, dimensions)

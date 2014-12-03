@@ -1,5 +1,4 @@
-Bullet = class:new()
-
+Bullet = newclass("Bullet")
 function Bullet:init(position, sprite, dimensions, direction, speed)
 	self.position = position
 	self.sprite = sprite

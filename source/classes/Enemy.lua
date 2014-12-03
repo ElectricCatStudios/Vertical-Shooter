@@ -1,4 +1,4 @@
-Enemy = class:new()
+Enemy = newclass("Enemy")
 
 function Enemy:init(path)
 	self.path = path
@@ -6,6 +6,7 @@ function Enemy:init(path)
 	self.path.current = self.path.current + 1
 	self.sprite = spr_enemyShip1
 	self.hitbox = Hitbox:new(self.position,Vector(self.sprite:getDimensions()))
+	self.id = nil
 end
 
 function Enemy:draw()

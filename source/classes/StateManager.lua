@@ -1,4 +1,4 @@
-StateManager = class:new()
+StateManager = newclass("StateManager")
 
 
 function StateManager:init()

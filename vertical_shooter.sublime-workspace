@@ -1,0 +1,583 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"PerfCountFreq",
+				"PerfCountFrequencyResult"
+			],
+			[
+				"Bytes",
+				"BytesPerSample"
+			],
+			[
+				"Soun",
+				"SoundIsPlaying"
+			],
+			[
+				"Secondar",
+				"SecondaryBufferSize"
+			],
+			[
+				"Byte",
+				"ByteToLock"
+			],
+			[
+				"By",
+				"BytesToWrite"
+			],
+			[
+				"Xin",
+				"xInputGetStateStub"
+			],
+			[
+				"x_in",
+				"x_input_set_state"
+			],
+			[
+				"Y",
+				"Y"
+			],
+			[
+				"OnF",
+				"onFocus"
+			],
+			[
+				"center",
+				"centerOffset"
+			],
+			[
+				"camCen",
+				"cameraCenterPos"
+			],
+			[
+				"TOOL",
+				"TOOLPANE_WIDTH"
+			],
+			[
+				"camer",
+				"cameraPosition"
+			],
+			[
+				"LEVE",
+				"LEVEL_WIDTH"
+			],
+			[
+				"Lev",
+				"LEVEL_HEIGHT"
+			],
+			[
+				"LEV",
+				"LEVEL_WIDTH"
+			],
+			[
+				"mouse",
+				"mousePositionSnap"
+			],
+			[
+				"Sta",
+				"STAGE_CENTER"
+			],
+			[
+				"S",
+				"STAGE_CENTER"
+			],
+			[
+				"STAGE",
+				"STAGE_HEIGHT"
+			],
+			[
+				"sta",
+				"STAGE_CENTER"
+			],
+			[
+				"drawC",
+				"drawCircle"
+			],
+			[
+				"sh",
+				"shotsLabel"
+			],
+			[
+				"W",
+				"WINDOW_WIDTH"
+			],
+			[
+				"find",
+				"findDynamicGhosts"
+			],
+			[
+				"WN",
+				"WINDOW_HEIGHT"
+			],
+			[
+				"WIN",
+				"WINDOW_WIDTH"
+			],
+			[
+				"ma",
+				"ma"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"leng",
+				"length_squared"
+			],
+			[
+				"Win",
+				"WINDOW_WIDTH"
+			],
+			[
+				"leve",
+				"LevelPrototype"
+			],
+			[
+				"cont",
+				"contactGenerators"
+			],
+			[
+				"clos",
+				"closestToC"
+			],
+			[
+				"p1T",
+				"p1ToClosest"
+			],
+			[
+				"nor",
+				"normalized"
+			],
+			[
+				"assign",
+				"assignedList"
+			],
+			[
+				"spri",
+				"springConstant"
+			],
+			[
+				"pList",
+				"pListEffectedOnly"
+			],
+			[
+				"force",
+				"forceGenerators"
+			],
+			[
+				"__",
+				"__init__"
+			],
+			[
+				"turret",
+				"turret"
+			],
+			[
+				"v2len",
+				"v2length"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"get",
+				"getHeight"
+			],
+			[
+				"for",
+				"fori	for i,v in ipairs()"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/handmade.sublime-build",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 520.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"find \"al\"",
+			"find",
+			"print(i)",
+			"print i",
+			"i = 4",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Workspace/Vertical Shooter"
+	],
+	"file_history":
+	[
+		"/C/Workspace/handmade/code/win32_handmade.cpp",
+		"/C/Users/Gian/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Gian/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Gian/AppData/Roaming/Sublime Text 3/Packages/User/SpaceCadet (SL).tmTheme",
+		"/C/Program Files/Sublime Text 3/Packages/Color Scheme - Default.sublime-package",
+		"/C/Program Files/Sublime Text 3/_ctypes.pyd",
+		"/C/Users/Gian/Dropbox/Programming/Gian/Space Courier/src/WorldController.as",
+		"/C/Workspace/Sublime Projects/code/win32_handmade.cpp",
+		"/C/Users/Gian/Dropbox/Programming/Gian/Space Courier/src/Explosion.as",
+		"/C/Workspace/Handmade Hero/code/misc/build.bat",
+		"/C/Workspace/Handmade Hero/code/win32_handmade.cpp",
+		"/C/Workspace/Handmade Hero/code/win32_handmade_old.cpp",
+		"/C/Workspace/Handmade Hero/handmade hero",
+		"/C/Workspace/Handmade Hero/.gitignore",
+		"/C/Workspace/Vertical Shooter Editor/source/loadSprites.lua",
+		"/C/Workspace/Vertical Shooter Editor/main.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/warlocks/game.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/warlocks/main.lua",
+		"/C/Workspace/Vertical Shooter Editor/misc/run.bat",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/objects/list.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/objects/collapsiblecategory.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/libraries/debug.lua",
+		"/C/Workspace/loveframes-demo/libraries/demo.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/init.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/objects/base.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/util.lua",
+		"/C/Workspace/Vertical Shooter Editor/conf.lua",
+		"/C/Workspace/loveframes-demo/libraries/loveframes/objects/textinput.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/states/mainEditor.lua",
+		"/C/Workspace/loveframes-demo/main.lua",
+		"/C/Workspace/loveframes-demo/examples/form.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/skins/Blue/skin.lua",
+		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/templates/base.lua",
+		"/C/Workspace/Vertical Shooter/source/states/gameState.lua",
+		"/E/Development/Code/Lua/snippets.lua",
+		"/C/Workspace/Vertical Shooter/main.lua",
+		"/C/Workspace/Secret Santa Picker/secretSanta.lua",
+		"/C/Workspace/Vertical Shooter/lvl/testLevel.lvl",
+		"/C/Workspace/Vertical Shooter/source/lib/vector.lua",
+		"/C/Workspace/Vertical Shooter/source/lib/class.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/alphabets/hiragana.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/alphabets/hiraganaRomanji.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/states/hiraResults.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/states/quiz.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/states/mainMenu.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/main.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/conf.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/hiraganaRomanji.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/hiragana.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/mainMenu.lua",
+		"/C/Users/Gian/Dropbox/Regan & Gian (1)/japaneseHelp/quiz.lua",
+		"/C/Users/Gian/Desktop/superPeggle/kit212base.py",
+		"/C/Users/Gian/Desktop/superPeggle/menu.py",
+		"/C/Users/Gian/Desktop/superPeggle/peg.py",
+		"/C/Users/Gian/Desktop/superPeggle/physicsobject.py",
+		"/C/Users/Gian/Desktop/superPeggle/baseLevel.py",
+		"/C/Users/Gian/Desktop/superPeggle/peggletest.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/GenericPhysicsGame.spec",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/pObject.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/target.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/level.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/contactGenerators.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/pObjects.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/forceGenerators.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/graphics.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/vec.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/collision.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/kit212base.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/levelPrototype.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/GenericPhysicsGame.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/mainMenu.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_05.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_06.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_07.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_08.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_09.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_10.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_11.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_12.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_13.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_01.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_02.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_03.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_14.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_15.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/lvl_04.py",
+		"/C/Workspace/Games Physics/Tutorial 4/Code/PeggleTest.py",
+		"/C/Users/Gian/Desktop/LETSDOIT/version1/game/player.py",
+		"/C/Users/Gian/Desktop/LETSDOIT/version1/asteroids.py",
+		"/C/Workspace/Games Physics/Tutorial 4/Code/kit212base.py",
+		"/C/Users/Gian/Downloads/playhistory410112 (1).mmip",
+		"/C/Workspace/Games Physics/Current/Code/vectest.py",
+		"/C/Workspace/Games Physics/Current/Code/stabilityTest.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/levels/levelProtoype.py",
+		"/C/Workspace/Games Physics/GenericPhysicsGame/engine/physicsobject.py",
+		"/C/Workspace/Games Physics/Current/Code/mainMenu.py",
+		"/C/Workspace/Games Physics/Current/Code/wall.py",
+		"/C/Workspace/Games Physics/Current/Code/ball.py",
+		"/C/Workspace/Games Physics/Current/Code/GenericPhysicsGame.py",
+		"/C/Workspace/Games Physics/Current/Code/level.py",
+		"/C/Workspace/Games Physics/Current/Code/collision.py",
+		"/C/Workspace/Games Physics/Current/Code/vec.py",
+		"/C/Workspace/Games Physics/Current/Code/physicsobject.py",
+		"/C/Workspace/Games Physics/Current/Code/ballsprite.py",
+		"/C/Workspace/Games Physics/Current/Code/kit212base.py",
+		"/C/Workspace/Games Physics/Current/Code/contactGenerators.py",
+		"/C/Workspace/Games Physics/Current/Code/forceGenerators.py",
+		"/C/Workspace/Games Physics/Current/Code/bullet.py",
+		"/C/Workspace/Games Physics/Tutorial 6/Code/AngryTest.py",
+		"/C/Workspace/Games Physics/Current/Code/PeggleTest.py",
+		"/C/Workspace/Games Physics/Current/Code/GravityGolf.py",
+		"/C/Workspace/Games Physics/Current/Code/avoidtest.py",
+		"/C/Workspace/Games Physics/Current/Code/AngryTest.py",
+		"/C/Workspace/Games Physics/Current/Code/bullet.pyc",
+		"/C/Workspace/Games Physics/Current/Code/collision.pyc",
+		"/C/Workspace/Games Physics/Current/Code/forceGenerators.pyc",
+		"/C/Workspace/Games Physics/Current/Code/kit212base.pyc",
+		"/C/Workspace/Games Physics/Current/Code/physicsobject.pyc",
+		"/C/Workspace/Games Physics/Current/Code/ball.pyc",
+		"/C/Workspace/Games Physics/Current/Code/vec.pyc",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/physicsobject.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/kit212base.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/forceGenerators.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/collision.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/GravityGolf.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/PeggleTest.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/vectest.py",
+		"/C/Workspace/Games Physics/Tutorial 5/Code/.flooignore"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"caret",
+			"cursor",
+			"caret",
+			"alt+t",
+			"alt+c",
+			"alt+h",
+			"alt+w",
+			"+n",
+			"+t",
+			"t",
+			"h",
+			"c",
+			"left",
+			"soundou",
+			"targetCur",
+			"PlayCursor",
+			"globalSec",
+			"stick",
+			"SoundOut",
+			"if(window",
+			"get",
+			"resizeD",
+			"int16",
+			"int8",
+			"WindowHandle",
+			"WindowRect",
+			"gdi",
+			"tostring",
+			"find",
+			"string",
+			"pos",
+			"ball.pos",
+			"height",
+			"SetHeight",
+			"SetWidth",
+			"resize",
+			"SetOpen",
+			"update",
+			"Update",
+			"OnOpenedClosed",
+			"Object Demonstrations",
+			"object demon",
+			"update",
+			"Update",
+			"update",
+			"Update",
+			"draw",
+			"Draw",
+			"draw",
+			"Draw",
+			"update",
+			"onChanged",
+			"resize",
+			"self.internals",
+			"internals",
+			"update",
+			"self",
+			"Draw",
+			"dPlayerMouseFro",
+			"print",
+			"scroll",
+			"print",
+			"or",
+			"math.min",
+			"space",
+			"label",
+			"level",
+			"ala",
+			"self.pList[0]",
+			"self.pList[2]",
+			"self.pList[1]",
+			"pObject"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"TargetCursor",
+			"set",
+			"int16_t",
+			"int8_t",
+			"int8_2",
+			"Window",
+			"ClientRect",
+			"p2",
+			"p1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 183.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "vertical_shooter.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Workspace\\Sublime Projects\\Vertical Shooter.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

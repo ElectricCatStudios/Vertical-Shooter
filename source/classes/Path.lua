@@ -1,4 +1,4 @@
-Path = class:new()
+Path = newclass("Path")
 
 function Path:init(data)
 	self.data = data or {}

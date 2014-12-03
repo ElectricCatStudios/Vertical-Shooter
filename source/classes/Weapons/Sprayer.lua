@@ -1,4 +1,4 @@
-Sprayer = class:new()
+Sprayer = newclass("Sprayer")
 
 function Sprayer:init(parent)
 	self.parent = parent

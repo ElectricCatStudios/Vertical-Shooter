@@ -1,4 +1,4 @@
-Player = class:new()
+Player = newclass("Player")
 
 function Player:init(bulletList)
 	self.speed = Vector(250, 200)
