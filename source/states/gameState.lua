@@ -1,29 +1,37 @@
 local gameState = {}
 
 function gameState:init(lvl)
+	self.gameObjects = {}		-- storage for all gameObjects
+	self.gameObjectIndex = 1	-- the index for the next gameObject to be added
+
 	self.timer = 0				-- how long this state has been running for
 	self.debugString = ""		-- a string that will be printed on screen
-	self.shipList = {}			-- all enemies currently in the game
 	self.spawnList = {}			-- list of enemies to spawn
 	self.spawnIndex = 1 		-- the index of the next enemy to spawn
-	self.projectileList = {}	-- list of all projectiles in the game
 	self.lvldata = io.open(lvl, 'r')		-- the file holding the level data	
 	self.background = spr_testBackground 	-- the sprite that will be used for the background
 	self.camPos = nil			-- the position of the camera in global coordinates
-	self.projectileCount = 0 	-- the number of projetiles that have been created, serves as an index
 	self.levelSpeed = -0		-- the rate at which the level scrolls  TODO: make this part of the level data
 	self.borderWidth = 200		-- how close to the side of the level the player must be for it to scroll
 	
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight()) -- set camera pos so that center of map is in center of screen
 
 	-- setup the player
-	self.player = Player:new(self.projectileList)
-	self.player:setPos(Vector(self.background:getWidth()/2, -32))
+	self.player = Player:new(self.gameObjectIndex, self, Vector(self.background:getWidth()/2, -32))
 	self.player.weapon = Sprayer:new(self.player)
 	self.player.constSpeed = Vector.UP*(self.levelSpeed) 		-- the speed that the player will move up at constantly
-	table.insert(self.shipList, self.player)					-- add player to the shipList
+	self:addGameObject(self.player)
 
 	self:readMap()
+end
+
+function gameState:addGameObject(gameobject) 
+	self.gameObjects[self.gameObjectIndex] = gameobject
+	self.gameObjectIndex = self.gameObjectIndex + 1
+end
+
+function gameState:removeGameObject(id)
+	self.gameObjects[id] = nil
 end
 
 function gameState:update(dt)
@@ -41,17 +49,14 @@ function gameState:update(dt)
 	self.camPos.x = math.clamp(self.camPos.x, 0, self.background:getWidth() - love.window.getWidth())
 
 	-- update loops
-	for i, v in pairs(self.shipList) do
-		v:update(dt)
-	end
-	for i, v in pairs(self.projectileList) do
+	for i, v in pairs(self.gameObjects) do
 		v:update(dt)
 	end
 	
 	-- spawn enemies in spawnList
 	if (self.spawnList[self.spawnIndex] and self.timer >= self.spawnList[self.spawnIndex].time) then
-		print("enemy spawned")
-		table.insert(self.shipList, Enemy:new(nil, nil, nil, self.spawnList[self.spawnIndex].path))
+		local enemy = Enemy:new(self.gameObjectIndex, self, nil, self.spawnList[self.spawnIndex].path)
+		self:addGameObject(enemy)
 		self.spawnIndex = self.spawnIndex + 1
 	end
 end
@@ -67,10 +72,7 @@ end
 function gameState:globalDraw()
 	love.graphics.draw(self.background, 0, -self.background:getHeight())
 	love.graphics.print(self.timer, 16, 16)
-	for i, v in pairs(self.shipList) do
-		v:draw()
-	end
-	for i, v in pairs(self.projectileList) do
+	for i, v in pairs(self.gameObjects) do
 		v:draw()
 	end
 end
@@ -126,18 +128,6 @@ function gameState:readMap()
 		
 		nextEnemy = io.read()
 	until(not nextEnemy)
-end
-
-function gameState:addProjectile(projectile)
-	local projectileCount = self.projectileCount
-
-	self.projectileList[projectileCount] = projectile
-	self.projectileCount = self.projectileCount + 1
-	return projectileCount
-end
-
-function gameState:removeProjectile(id)
-	self.projectileList[id] = nil
 end
 
 state:add("game", gameState)

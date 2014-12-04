@@ -14,7 +14,7 @@ function Bullet:update(dt)
 	self.position = dp + self.position
 	self.hitbox:translate(dp)
 	if (self.position.y < global_currentState.camPos.y - 10) then		-- TODO: not use constant here
-		global_currentState:removeProjectile(self.id)
+		global_currentState:removeGameObject(self.id)
 	end
 end
 
