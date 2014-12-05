@@ -7,6 +7,8 @@ function Bullet:init(id, parent, position, sprite, dimensions, direction, speed)
 	self.speed = speed or 600
 	self.vel = self.direction*self.speed
 	self.hitbox = Hitbox:new(position, dimensions)
+	-- TODO: need more elegant solution here
+	self.collidesWithEnemy = true
 end
 
 function Bullet:update(dt)

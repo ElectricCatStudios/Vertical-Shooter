@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"gameO",
+				"gameObjectIndex"
+			],
+			[
 				"PerfCountFreq",
 				"PerfCountFrequencyResult"
 			],
@@ -204,42 +208,10 @@
 	"buffers":
 	[
 		{
-			"file": "main.lua",
+			"file": "source/states/gameState.lua",
 			"settings":
 			{
-				"buffer_size": 1421,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/classes/Hitbox.lua",
-			"settings":
-			{
-				"buffer_size": 826,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/classes/Path.lua",
-			"settings":
-			{
-				"buffer_size": 3529,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/classes/Projectiles/Bullet.lua",
-			"settings":
-			{
-				"buffer_size": 716,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/classes/Enemy.lua",
-			"settings":
-			{
-				"buffer_size": 571,
+				"buffer_size": 4670,
 				"line_ending": "Unix"
 			}
 		},
@@ -252,10 +224,10 @@
 			}
 		},
 		{
-			"file": "source/classes/StateManager.lua",
+			"file": "source/classes/Hitbox.lua",
 			"settings":
 			{
-				"buffer_size": 1145,
+				"buffer_size": 826,
 				"line_ending": "Unix"
 			}
 		},
@@ -263,16 +235,16 @@
 			"file": "source/classes/Weapons/Sprayer.lua",
 			"settings":
 			{
-				"buffer_size": 510,
+				"buffer_size": 542,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "source/states/gameState.lua",
+			"file": "source/classes/Projectiles/Bullet.lua",
 			"settings":
 			{
-				"buffer_size": 4998,
-				"line_ending": "Unix"
+				"buffer_size": 716,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -280,8 +252,15 @@
 			"settings":
 			{
 				"buffer_size": 567,
-				"line_ending": "Windows",
-				"name": "GameObject = newclass(\"GameObject\")"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/classes/Enemy.lua",
+			"settings":
+			{
+				"buffer_size": 571,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -324,12 +303,20 @@
 	[
 		"/C/Workspace/Vertical Shooter",
 		"/C/Workspace/Vertical Shooter/source",
-		"/C/Workspace/Vertical Shooter/source/classes",
-		"/C/Workspace/Vertical Shooter/source/classes/Projectiles",
-		"/C/Workspace/Vertical Shooter/source/classes/Weapons"
+		"/C/Workspace/Vertical Shooter/source/classes"
 	],
 	"file_history":
 	[
+		"/C/Workspace/Vertical Shooter/source/classes/Path.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/GameObject.lua",
+		"/C/Workspace/Vertical Shooter/source/states/gameState.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/Weapons/Sprayer.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/StateManager.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/Player.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/Enemy.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/Projectiles/Bullet.lua",
+		"/C/Workspace/Vertical Shooter/source/classes/Hitbox.lua",
+		"/C/Workspace/Vertical Shooter/main.lua",
 		"/C/Workspace/handmade/code/win32_handmade.cpp",
 		"/C/Users/Gian/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Gian/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
@@ -363,9 +350,7 @@
 		"/C/Workspace/loveframes-demo/examples/form.lua",
 		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/skins/Blue/skin.lua",
 		"/C/Workspace/Vertical Shooter Editor/source/lib/loveframes/templates/base.lua",
-		"/C/Workspace/Vertical Shooter/source/states/gameState.lua",
 		"/E/Development/Code/Lua/snippets.lua",
-		"/C/Workspace/Vertical Shooter/main.lua",
 		"/C/Workspace/Secret Santa Picker/secretSanta.lua",
 		"/C/Workspace/Vertical Shooter/lvl/testLevel.lvl",
 		"/C/Workspace/Vertical Shooter/source/lib/vector.lua",
@@ -449,15 +434,7 @@
 		"/C/Workspace/Games Physics/Current/Code/kit212base.pyc",
 		"/C/Workspace/Games Physics/Current/Code/physicsobject.pyc",
 		"/C/Workspace/Games Physics/Current/Code/ball.pyc",
-		"/C/Workspace/Games Physics/Current/Code/vec.pyc",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/physicsobject.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/kit212base.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/forceGenerators.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/collision.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/GravityGolf.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/PeggleTest.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/vectest.py",
-		"/C/Workspace/Games Physics/Tutorial 5/Code/.flooignore"
+		"/C/Workspace/Games Physics/Current/Code/vec.pyc"
 	],
 	"find":
 	{
@@ -476,6 +453,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"print",
+			"enemy",
 			"Bullet",
 			"Enemy",
 			"start",
@@ -583,24 +562,25 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.lua",
+					"file": "source/states/gameState.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1421,
+						"buffer_size": 4670,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54,
-								54
+								1463,
+								1463
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Lua/Lua.tmLanguage"
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -611,106 +591,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "source/classes/Hitbox.lua",
+					"file": "source/classes/Player.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 826,
+						"buffer_size": 1099,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "source/classes/Path.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								325,
-								325
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "source/classes/Projectiles/Bullet.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 716,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								210,
-								210
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/classes/Enemy.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 571,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
+								0,
+								0
 							]
 						],
 						"settings":
@@ -726,20 +619,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "source/classes/Player.lua",
+					"buffer": 2,
+					"file": "source/classes/Hitbox.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1099,
+						"buffer_size": 826,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								887,
-								887
+								0,
+								0
 							]
 						],
 						"settings":
@@ -751,53 +644,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "source/classes/StateManager.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1145,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								300,
-								300
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
+					"buffer": 3,
 					"file": "source/classes/Weapons/Sprayer.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 510,
+						"buffer_size": 542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								313,
-								316
+								0,
+								0
 							]
 						],
 						"settings":
@@ -813,20 +677,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "source/states/gameState.lua",
+					"buffer": 4,
+					"file": "source/classes/Projectiles/Bullet.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4998,
+						"buffer_size": 716,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2488,
-								2488
+								0,
+								0
 							]
 						],
 						"settings":
@@ -834,15 +698,15 @@
 							"syntax": "Packages/Lua/Lua.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 294.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 5,
 					"file": "source/classes/GameObject.lua",
 					"semi_transient": false,
 					"settings":
@@ -854,13 +718,12 @@
 						"selection":
 						[
 							[
-								539,
-								539
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "GameObject = newclass(\"GameObject\")",
 							"syntax": "Packages/Lua/Lua.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -868,6 +731,35 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/classes/Enemy.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 571,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -915,7 +807,7 @@
 	"project": "vertical_shooter.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":

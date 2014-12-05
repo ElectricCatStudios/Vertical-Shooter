@@ -9,7 +9,7 @@ function GameObject:init(id, parent, position, sprite)
 end
 
 function GameObject:destroy()
-	parent:removeGameObject(id)
+	self.parent:removeGameObject(self.id)
 end
 
 function GameObject:update(dt)

@@ -11,7 +11,7 @@ function gameState:init(lvl)
 	self.lvldata = io.open(lvl, 'r')		-- the file holding the level data	
 	self.background = spr_testBackground 	-- the sprite that will be used for the background
 	self.camPos = nil			-- the position of the camera in global coordinates
-	self.levelSpeed = -0		-- the rate at which the level scrolls  TODO: make this part of the level data
+	self.levelSpeed = 50		-- the rate at which the level scrolls  TODO: make this part of the level data
 	self.borderWidth = 200		-- how close to the side of the level the player must be for it to scroll
 	
 	self.camPos = -Vector(-(self.background:getWidth() - love.window.getWidth())/2, love.window.getHeight()) -- set camera pos so that center of map is in center of screen

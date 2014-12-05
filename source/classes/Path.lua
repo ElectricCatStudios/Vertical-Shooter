@@ -5,6 +5,7 @@ function Path:init(data)
 	self.current = 1
 	self.time = 0
 	self.position = Vector()
+	self.parent = nil
 end
 
 function Path:addFrame(type, a, b, c, d)
@@ -71,6 +72,8 @@ function Path:update(dt)
 		elseif (current.type == 'bezier3') then
 			self.position = (1-t)^3*current.p0 + 3*(1-t)^2*t*current.p1 + 3*(1-t)*t^2*current.p2 + t^3*current.pf
 		end
+	else
+		self.parent:destroy()
 	end
 end
 
