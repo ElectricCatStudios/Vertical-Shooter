@@ -1,8 +1,9 @@
--- TODO: make a new GameObject system in gameState.lua
+-- TODO handle file opening better
 
 -- dependencies
 require "./source/lib/yaci"					-- class implementation
 require "./source/lib/util"					-- util
+require "./source/lib/PriorityQueue"
 Vector = require "./source/lib/vector"		-- vector
 
 Vector.UP = Vector(0, -1)

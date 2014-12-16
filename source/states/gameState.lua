@@ -1,12 +1,14 @@
 local gameState = {}
 
 function gameState:init(lvl)
+	self.SPAWN_DISTANCE = 50	-- how close to the top of the screen the enemies starting position must be before it spawns
+
 	self.gameObjects = {}		-- storage for all gameObjects
 	self.gameObjectIndex = 1	-- the index for the next gameObject to be added
 
 	self.timer = 0				-- how long this state has been running for
 	self.debugString = ""		-- a string that will be printed on screen
-	self.spawnList = {}			-- list of enemies to spawn
+	self.spawnList = PriorityQueue:new()	-- list of enemies to spawn
 	self.spawnIndex = 1 		-- the index of the next enemy to spawn
 	self.lvldata = io.open(lvl, 'r')		-- the file holding the level data	
 	self.background = spr_testBackground 	-- the sprite that will be used for the background
@@ -38,7 +40,9 @@ function gameState:update(dt)
 	self.timer = self.timer + dt
 
 	-- camera scrolling
-	self.camPos = self.camPos - Vector.DOWN*self.levelSpeed*dt 		-- Y scrolling
+	-- Y scrolling
+	self.camPos = self.camPos - Vector.DOWN*self.levelSpeed*dt
+
 	local leftDis = self.player.position.x - self.camPos.x
 	local rightDis = self.camPos.x + love.window.getWidth() - self.player.position.x
 	if (leftDis < self.borderWidth) then
@@ -48,16 +52,19 @@ function gameState:update(dt)
 	end
 	self.camPos.x = math.clamp(self.camPos.x, 0, self.background:getWidth() - love.window.getWidth())
 
+	-- self.camPos.x = roundTo(self.camPos.x, 1, 'nearest')
+	-- self.camPos.y = roundTo(self.camPos.y, 1, 'nearest')
+
 	-- update loops
 	for i, v in pairs(self.gameObjects) do
 		v:update(dt)
 	end
 	
 	-- spawn enemies in spawnList
-	if (self.spawnList[self.spawnIndex] and self.timer >= self.spawnList[self.spawnIndex].time) then
-		local enemy = Enemy:new(self.gameObjectIndex, self, nil, self.spawnList[self.spawnIndex].path)
+	while(self.nextSpawnHeight and self.nextSpawnHeight > self.camPos.y) do
+		local enemy = Enemy:new(self.gameObjectIndex, self, nil, self.nextSpawn.path)
 		self:addGameObject(enemy)
-		self.spawnIndex = self.spawnIndex + 1
+		self.nextSpawn, self.nextSpawnHeight = self.spawnList:Remove()
 	end
 end
 
@@ -124,10 +131,15 @@ function gameState:readMap()
 			end
 		end
 		
-		table.insert(self.spawnList, {['time'] = tonumber(spawnTime), ['path'] = newPath, ['type'] = enemyType})
+		local enemyData = {['time'] = tonumber(spawnTime), ['path'] = newPath, ['type'] = enemyType,
+			["startY"] = tonumber(newPath.startY)}
+
+		self.spawnList:Insert(enemyData, newPath.startY)
 		
 		nextEnemy = io.read()
 	until(not nextEnemy)
+
+	self.nextSpawn, self.nextSpawnHeight = self.spawnList:Remove()
 end
 
 state:add("game", gameState)

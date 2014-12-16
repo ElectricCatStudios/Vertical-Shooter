@@ -6,12 +6,14 @@ function Path:init(data)
 	self.time = 0
 	self.position = Vector()
 	self.parent = nil
+	self.startY = nil
 end
 
 function Path:addFrame(type, a, b, c, d)
 	local frame = {['type'] = type}
 
 	if (type == 'start') then
+		self.startY = tonumber(a.y)
 		frame.pf = a
 		self.position = a
 		frame.time = 0
